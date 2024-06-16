@@ -11,7 +11,8 @@ ARG TARGETVARIANT
 
 ARG FORCE_INSTALL_PACKAGES=1
 RUN --mount=target=/build,source=build \
-    TARGET=${TARGETARCH}${TARGETVARIANT} /build/run.sh install-packages
+    TARGET=${TARGETARCH}${TARGETVARIANT} /build/run.sh install-packages \
+    -e eula=true \
 
 RUN --mount=target=/build,source=build \
     /build/run.sh setup-user
