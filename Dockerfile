@@ -10,7 +10,8 @@ ARG TARGETARCH
 ARG TARGETVARIANT
 
 ARG FORCE_INSTALL_PACKAGES=1
-RUN -e EULA=TRUE --mount=target=/build,source=build \
+RUN -e EULA=TRUE
+RUN --mount=target=/build,source=build \
     TARGET=${TARGETARCH}${TARGETVARIANT} /build/run.sh install-packages \
   
 
