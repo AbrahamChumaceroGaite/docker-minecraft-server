@@ -3,6 +3,7 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
+      VERSION: 1.20.1
       CF_API_KEY: $2a$10$NN/M1Nj3OCK5vzHjnWL4sezaKqhaqRIQEBe5EHPBEnwC3rixS7zTK
     ports:
       - "53687:25565"
