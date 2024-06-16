@@ -10,7 +10,7 @@ ARG TARGETARCH
 ARG TARGETVARIANT
 
 ARG FORCE_INSTALL_PACKAGES=1
-RUN -e EULA=TRUE
+
 RUN --mount=target=/build,source=build \
     TARGET=${TARGETARCH}${TARGETVARIANT} /build/run.sh install-packages \
   
@@ -63,7 +63,7 @@ WORKDIR /data
 STOPSIGNAL SIGTERM
 
 # End user MUST set EULA and change RCON_PASSWORD
-ENV TYPE=VANILLA VERSION=LATEST EULA="" UID=1000 GID=1000
+ENV TYPE=VANILLA VERSION=LATEST EULA="TRUE" UID=1000 GID=1000
 
 COPY --chmod=755 scripts/start* /
 COPY --chmod=755 bin/ /usr/local/bin/
