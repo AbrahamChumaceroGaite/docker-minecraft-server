@@ -2,14 +2,14 @@ services:
   mc:
     image: itzg/minecraft-server
     environment:
-      EULA: 'true'
+      EULA: "true"
       CF_API_KEY: $2a$10$NN/M1Nj3OCK5vzHjnWL4sezaKqhaqRIQEBe5EHPBEnwC3rixS7zTK
-    ports:      
-"53687:25565"
-  volumes:
-data:/data
-stdin_open: true
-tty: true
-restart: unless-stopped
+    ports:
+      - "53687:25565"
+    volumes:
+      - data:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
 volumes:
   data: {}
