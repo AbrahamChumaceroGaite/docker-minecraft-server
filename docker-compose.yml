@@ -11,4 +11,4 @@ services:
         aquaculture
         naturalist
     ports:
-      - "25565:25565"
+      - "53687:25565"
