@@ -4,7 +4,7 @@ services:
     environment:
       EULA: "true"
     ports:
-      - "25565:25565"
+      - "53687:25565"
     volumes:
       - data:/data
     stdin_open: true
