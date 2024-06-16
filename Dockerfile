@@ -63,7 +63,7 @@ WORKDIR /data
 STOPSIGNAL SIGTERM
 
 # End user MUST set EULA and change RCON_PASSWORD
-ENV TYPE=VANILLA VERSION=LATEST EULA="TRUE" UID=1000 GID=1000
+ENV TYPE=AUTO_CURSEFORGE VERSION=1.20.1 EULA="TRUE" CF_PAGE_URL=https://www.curseforge.com/minecraft/modpacks/better-mc-forge-bmc4 UID=1000 GID=1000
 
 COPY --chmod=755 scripts/start* /
 COPY --chmod=755 bin/ /usr/local/bin/
