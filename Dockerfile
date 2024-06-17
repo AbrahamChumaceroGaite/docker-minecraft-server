@@ -20,7 +20,7 @@ RUN --mount=target=/build,source=build \
 
 COPY --chmod=644 files/sudoers* /etc/sudoers.d
 
-EXPOSE 25555
+EXPOSE 25565
 
 ARG APPS_REV=1
 ARG GITHUB_BASEURL=https://github.com
