@@ -11,4 +11,5 @@ services:
     tty: true
     restart: unless-stopped
 volumes:
+  ./downloads:/downloads
   data: {}
