@@ -7,7 +7,7 @@ services:
       - "25865:25565"
     volumes:
       - data:/data
-      - ./downloads:/downloads
+      - downloads:/downloads
     stdin_open: true
     tty: true
     restart: unless-stopped
