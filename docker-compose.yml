@@ -7,9 +7,8 @@ services:
       - "25865:25565"
     volumes:
       - data:/data
+      - ./downloads:/downloads
     stdin_open: true
     tty: true
-    restart: unless-stopped
-volumes:
-  ./downloads:/downloads
+    restart: unless-stopped  
   data: {}
