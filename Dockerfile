@@ -14,9 +14,13 @@ ARG FORCE_INSTALL_PACKAGES=1
 RUN --mount=target=/build,source=build \
     TARGET=${TARGETARCH}${TARGETVARIANT} /build/run.sh install-packages \
 
-RUN curl https://jgalqq.sn.files.1drv.com/y4maNz1NJRZ0MV_eZB8sBqnkFFYwZL6DmfA703-2pbhXr3X7VYIVW0WydQ9ezOuko0jdSE9WzGyzvnjivLAWFjJONjVPXy-1dujJJ0VnOX1OuLcm8svaHfIxUf0rKPMVoNZawD3k5uJefKx-DqyUACQeMUdkFA0m6n9dc8RrLbUu6esNNUxlf6l3_xzT4j-1-rUH9tKESbBJ-wNvQfCsUV4110T3Wek69ZLNg-K9emB4iI?AVOverride=1
+RUN echo "DESCARGANDO LOS MODS!!"
 
-RUN cp mods.zip /downloads/
+ADD https://jgalqq.sn.files.1drv.com/y4maNz1NJRZ0MV_eZB8sBqnkFFYwZL6DmfA703-2pbhXr3X7VYIVW0WydQ9ezOuko0jdSE9WzGyzvnjivLAWFjJONjVPXy-1dujJJ0VnOX1OuLcm8svaHfIxUf0rKPMVoNZawD3k5uJefKx-DqyUACQeMUdkFA0m6n9dc8RrLbUu6esNNUxlf6l3_xzT4j-1-rUH9tKESbBJ-wNvQfCsUV4110T3Wek69ZLNg-K9emB4iI?AVOverride=1 /tmp
+
+COPY /tmp/mods.zip /app/downloads/mods.zip
+
+RUN echo "YA SE DESCARGO LOS MODS!!"
 
 RUN --mount=target=/build,source=build \
     /build/run.sh setup-user
