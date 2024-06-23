@@ -1,15 +1,16 @@
 services:
   mc:
     image: itzg/minecraft-server
-    volumes:
-    - ./modpacks:/modpacks:ro
-    - data:/data
     environment:
       EULA: "true"
-      TYPE: CURSEFORGE
-      CF_SERVER_MOD: /modpacks/SIMPLE-SERVER-FILES-0.3.20.zip
+      TYPE: FORGE
+      MODS_FILE: /extras/mods.txt
+      REMOVE_OLD_MODS: "true"
     ports:
       - "25865:25565"
+    volumes:
+      - data:/data
+      - ./mods.txt:/extras/mods.txt:ro
 
 volumes:
-  data: {}
+  data:
