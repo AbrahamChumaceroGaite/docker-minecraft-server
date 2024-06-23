@@ -5,6 +5,9 @@ FROM ${BASE_IMAGE}
 
 # hook into docker BuildKit --platform support
 # see https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
+
+RUN echo "Sebas Putito"
+
 ARG TARGETOS
 ARG TARGETARCH
 ARG TARGETVARIANT
