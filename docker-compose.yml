@@ -1,18 +1,15 @@
-# This composition can be used to serve up the rendered mkdocs for local authoring.
-#
-# docker compose -f docker-compose-mkdocs.yml -p mkdocs up
-#
-# and then access http://localhost:8000
-
 services:
-  mkdocs:
-    build:
-      context: .
-      dockerfile: docs/Dockerfile
+  mc:
+    image: itzg/minecraft-server
     volumes:
-      - ./docs:/mkdocs/docs
-    command:
-      - serve
-      - --dev-addr=0.0.0.0:8000
+    - ./modpacks:/modpacks:ro
+    - data:/data
+    environment:
+      EULA: "true"
+      TYPE: CURSEFORGE
+      CF_SERVER_MOD: /modpacks/SIMPLE-SERVER-FILES-0.3.20.zip
     ports:
-      - "8000:8000"
+      - "25565:25565"
+
+volumes:
+  data: {}
